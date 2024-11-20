@@ -1,6 +1,6 @@
 Sota:
 https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/tree/main/TempeHS_Sensor_Catalogue
-US sensor pin 7
+(    ) pin 7
 
 Sebastian:
 https://github.com/TempeHS/TempeHS_Ardunio_Boilerplate/tree/main/TempeHS_Sensor_Catalogue
