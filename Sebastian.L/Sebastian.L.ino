@@ -6,7 +6,7 @@ static unsigned int degreeOfMovement = 180;    // variable to read the value fro
 static unsigned int lineFollower = 5;
 
 void setup() {
-  myServo1.attach(3);  // attaches the servo on pin 9 to the servo object
+  myServo1.attach(3);  // attaches the servo on pin 3 to the servo object
    myServo2.attach(4);
    {
   Serial.begin(9600);
