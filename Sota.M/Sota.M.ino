@@ -97,9 +97,11 @@ void loop() {
 #include <Servo.h>
 
 // Define the servo and ultrasonic sensor pin
-Servo myServo;
+Servo myServo1;
+Servo myServo2;
 const int sensorPin = 5; // Single pin for both trigger and echo
-const int servoPin = 7;
+const int servoPin1 = 7;
+const int servoPin2 = 6;
 
 // Variable to store the last servo position
 int lastServoAngle = 0;
@@ -109,8 +111,8 @@ void setup() {
   pinMode(sensorPin, OUTPUT);
   
   // Attach the servo motor to the specified pin
-  myServo.attach(servoPin);
-  
+  myServo1.attach(servoPin1);
+  myServo2.attach(servoPin2);
   // Start serial communication for debugging
   Serial.begin(9600);
 }
@@ -121,7 +123,7 @@ void loop() {
   // Send a pulse to trigger the ultrasonic sensor
   pinMode(sensorPin, OUTPUT);
   digitalWrite(sensorPin, LOW);
-  delayMicroseconds(2);
+  delayMicroseconds(2); 
   digitalWrite(sensorPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(sensorPin, LOW);
@@ -147,7 +149,8 @@ void loop() {
   // Check if the servo needs to move to a new position
   if (servoAngle != lastServoAngle) {
     // Move the servo to the corresponding angle
-    myServo.write(servoAngle);
+    myServo1.write(servoAngle);
+    myServo2.write(servoAngle);
     // Update the last servo position
     lastServoAngle = servoAngle;
   }
