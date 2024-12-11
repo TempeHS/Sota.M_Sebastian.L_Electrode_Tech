@@ -122,15 +122,15 @@ void loop() {
   
   // Send a pulse to trigger the ultrasonic sensor
   pinMode(sensorPin, OUTPUT);
-  digitalWrite(sensorPin, LOW);
+  digitalWrite(sensorPin, LOW); // Ensures the pin is low before sending the trigger pulse.
   delayMicroseconds(2); 
-  digitalWrite(sensorPin, HIGH);
+  digitalWrite(sensorPin, HIGH); //Sends the 10-microsecond trigger pulse.
   delayMicroseconds(10);
-  digitalWrite(sensorPin, LOW);
+  digitalWrite(sensorPin, LOW); //ends the trigger pulse
   
-  // Switch the pin to input to read the echo
+  // Switches the pin to input mode to read the echo.
   pinMode(sensorPin, INPUT);
-  duration = pulseIn(sensorPin, HIGH);
+  duration = pulseIn(sensorPin, HIGH); //Measures the time duration of the echo pulse in microseconds.
   
   // Calculate the distance in cm
   distanceCm = duration * 0.034 / 2;
